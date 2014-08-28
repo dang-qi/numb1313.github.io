@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>This is DQ's personal website.</title><link href="numb1313.github.io/" rel="alternate"></link><link href="numb1313.github.io/feeds%5Cdq.atom.xml" rel="self"></link><id>numb1313.github.io/</id><updated>2014-08-26T00:00:00+02:00</updated><entry><title>My first reviel</title><link href="numb1313.github.io/" rel="alternate"></link><updated>2014-08-26T00:00:00+02:00</updated><author><name>DQ</name></author><id>tag:,2014-08-26:numb1313.github.io/</id><summary type="html">&lt;h1&gt;世界，你好&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>This is DQ's personal website.</title><link href="./" rel="alternate"></link><link href="./feeds%5Cdq.atom.xml" rel="self"></link><id>./</id><updated>2014-08-26T00:00:00+02:00</updated><entry><title>My first reviel</title><link href="./" rel="alternate"></link><updated>2014-08-26T00:00:00+02:00</updated><author><name>DQ</name></author><id>tag:,2014-08-26:./</id><summary type="html">&lt;h1&gt;世界，你好&lt;/h1&gt;
 &lt;p&gt;这是我发布的第一篇文章，用来测试。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Hellow world!&lt;/strong&gt;&lt;/p&gt;</summary></entry></feed>
