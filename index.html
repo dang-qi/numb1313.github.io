@@ -13,7 +13,7 @@
 <link rel="canonical" href="http://www.dangqi.me/">
 
         <meta name="author" content="DQ" />
-        <meta name="description" content="世界，你好 这是我发布的第一篇文章，用来测试。 Hellow world!" />
+        <meta name="description" content="利用pelican+github搭建自己的网站 从暑假开始就想搭建一个自己的个人网站了，无奈到现在才基本完成搭建。在搭建的过程中遇到了许多问题，为了分享搭建的心得，这里写一篇文章来描述搭建流程。我的搭建环境是windows 8.1(64bit)，所以这里只说我使用的环境的搭建过程。 首先介绍一下搭建所使用的工具，网站等： python pelican github pip Markdown Google Analytics Google Webmasters Disqus Sitemap Godaddy * Dnspod 工具的下载及安装 git for windows 的下载与安装 由于是在windows下使用Git，可以先下载一个Git for windows(下载地址)，安装时按照默认选项安装即可。以下是git for windows截图。 python与pip的下载与安装 然后是python的下载和安装，在官网上找到适合自己电脑的版本安装即可，我使用的是python 2.7版本的 ..." />
 
 
 
@@ -75,7 +75,7 @@ This is DQ's website.            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-08-29T00:00:00"> 周五 29 八月 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-09-08T00:00:00"> 周一 08 九月 2014</time>
     </span>
 
 
@@ -83,9 +83,171 @@ This is DQ's website.            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h1>世界，你好</h1>
-<p>这是我发布的第一篇文章，用来测试。</p>
-<p><strong>Hellow world!</strong></p>
+                <h1>利用pelican+github搭建自己的网站</h1>
+<p>从暑假开始就想搭建一个自己的个人网站了，无奈到现在才基本完成搭建。在搭建的过程中遇到了许多问题，为了分享搭建的心得，这里写一篇文章来描述搭建流程。我的搭建环境是<strong>windows 8.1(64bit)</strong>，所以这里只说我使用的环境的搭建过程。</p>
+<p>首先介绍一下搭建所使用的工具，网站等：<br />
+<em> python<br />
+</em> pelican<br />
+<em> github<br />
+</em> pip<br />
+<em> Markdown<br />
+</em> Google Analytics<br />
+<em> Google Webmasters<br />
+</em> Disqus<br />
+<em> Sitemap<br />
+</em> Godaddy<br />
+* Dnspod</p>
+<h2>工具的下载及安装</h2>
+<h3>git for windows 的下载与安装</h3>
+<p>由于是在windows下使用Git，可以先下载一个Git for windows(<a href="http://msysgit.github.io/">下载地址</a>)，安装时按照默认选项安装即可。以下是git for windows截图。<br />
+<img alt="git for windows截图" src="https://lh6.googleusercontent.com/-l-QhhNNnMgw/VAvfe0uXpvI/AAAAAAAAACg/3hxUQf1OpVg/s677/gitforwindows.jpg" /></p>
+<h3>python与pip的下载与安装</h3>
+<p>然后是python的<a href="https://www.python.org/downloads/">下载</a>和安装，在官网上找到适合自己电脑的版本安装即可，我使用的是python 2.7版本的。最后不要忘了把python所在的目录（我的电脑中为：D:\Python27）加入环境变量中的Path里面。</p>
+<p>pip的安装需要先下载<a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a>文件（可以右键，链接另存为），然后在git for windows中输入命令  </p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">d</span><span class="o">:</span><span class="err">\</span><span class="n">blog</span>   <span class="c1">//其中d:\blog 是我下载的get-pip.py的路径，你需要写你的下载路径</span>
+<span class="n">python</span> <span class="n">get</span><span class="o">-</span><span class="n">pip</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
+
+
+<p>若为python 3版本的，再把python安装路径中Script的文件夹的路径加入环境变量中，比如 D:\Python34\Scripts，将这个目录加入环境变量中将可以直接运行pip。</p>
+<h3>pelican与markdown的安装</h3>
+<p>直接在git for windows中输入</p>
+<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">markdown</span>
+</pre></div>
+
+
+<h3>用pelican开始创建网页</h3>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">e</span><span class="o">:</span>                   <span class="c1">//切换到想要创建网页的路径</span>
+<span class="n">mkdir</span> <span class="n">blog</span>              <span class="c1">//建立文件夹</span>
+<span class="n">cd</span> <span class="n">blog</span>                 <span class="c1">//进入blog文件夹</span>
+<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>      <span class="c1">//快速初始化</span>
+</pre></div>
+
+
+<p>之后会弹出很多选项，按照自己的情况选择就好，若是不清楚的选默认就可以了。</p>
+<p>以下为快速初始化后生成的目录</p>
+<div class="highlight"><pre><span class="n">blog</span><span class="o">/</span>  
+<span class="err">├──</span> <span class="n">content</span>              <span class="err">#</span> <span class="err">存放输入的源文件</span>  
+<span class="err">│</span>   <span class="err">└──</span> <span class="p">(</span><span class="n">pages</span><span class="p">)</span>          <span class="err">#</span> <span class="err">存放手工创建的静态页面</span>  
+<span class="err">├──</span> <span class="n">output</span>               <span class="err">#</span> <span class="err">生成的输出文件</span>  
+<span class="err">├──</span> <span class="n">develop_server</span><span class="p">.</span><span class="n">sh</span>    <span class="err">#</span> <span class="err">方便开启测试服务器</span>  
+<span class="err">├──</span> <span class="n">Makefile</span>             <span class="err">#</span> <span class="err">方便管理博客的</span><span class="n">Makefile</span>  
+<span class="err">├──</span> <span class="n">pelicanconf</span><span class="p">.</span><span class="n">py</span>       <span class="err">#</span> <span class="err">主配置文件</span>  
+<span class="err">└──</span> <span class="n">publishconf</span><span class="p">.</span><span class="n">py</span>       <span class="err">#</span> <span class="err">主发布文件，可删除</span>
+</pre></div>
+
+
+<h3>markdownpad2的下载与使用</h3>
+<p>在<a href="http://zh.wikipedia.org/wiki/Markdown">这个链接</a>里可以了解markdown。</p>
+<p>我使用的编辑软件是是markdownpad2，<a href="http://markdownpad.com/download.html">下载软件</a>。</p>
+<p>此图为编辑博客的截图。</p>
+<p><img alt="markdownpad使用截图" src="https://lh4.googleusercontent.com/-2oVb7ym_o5k/VAvr27bJVLI/AAAAAAAAAC8/VEFA4ZOUNkQ/s912/markdown.jpg" /></p>
+<p>关于markdown的教程，有以下2个推荐：<br />
+1. <a href="http://v.youku.com/v_show/id_XNjgwOTAxMTE2.html">视频:最好熟练掌握的Markdown基本语法</a><br />
+2. <a href="http://wowubuntu.com/markdown/">Markdown 语法说明 (简体中文版)</a></p>
+<p>在编辑好markdown文件后，将文件存入上一步中生成的 d:\blog\content 目录下。之后要对blog目录下的pelicanconf文件进行编辑，设置SITEURL = '.'，以便在本地预览。若需要上传到网站上，则需要设置为SITEURL = 'http://www.example.com'。<strong>这里的设置一定要加http://，否则无法应用css样式。</strong>之后在命令行中输入</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">d</span><span class="o">:</span><span class="err">\</span><span class="n">blog</span><span class="err">\</span><span class="n">content</span>
+<span class="n">pelican</span> <span class="n">content</span>
+</pre></div>
+
+
+<p>这样在output文件夹下就可以生成编辑好的网页了。然后在命令行中输入</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">d</span><span class="o">:</span><span class="err">\</span><span class="n">blog</span><span class="err">\</span><span class="n">output</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span>
+</pre></div>
+
+
+<p>之后，在浏览器中输入 <a href="http://localhost:8000/">http://localhost:8000/</a>就可以预览写好的网页了。</p>
+<p>我在自己建站的过程中，参考过其他的教程，里面提到了make工具来重新生成修改过的文档，但是由于在windows的环境，使用make工具不是一个好的方式，可以直接用pelican content命令直接重新生成。或者使用Fabric工具。具体的使用方法见<a href="http://docs.getpelican.com/en/3.4.0/publish.html">这里</a>。</p>
+<h2>github pages的使用</h2>
+<p>要使用github pages，首先需要在<a href="https://www.github.com">github</a>上申请一个自己的账号，假设你的账号名为<strong>username</strong>，则需要建一个命名为<strong>username.github.io</strong>的仓库（具体操作可以参考<a href="https://help.github.com/articles/create-a-repo">这里</a>）。之后，可以在命令行中输入</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">yourpath</span>                         <span class="c1">//转到你想建文件夹的路径</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/username/username.github.io</span>
+</pre></div>
+
+
+<p>之后把前面output文件夹中的文件拷入这个文件夹，即yourpath\username.github.io文件夹。然后输入</p>
+<div class="highlight"><pre><span class="n">cd</span> <span class="n">username</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span>
+<span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;some information&quot;</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
+
+
+<p>之后会让你输入用户名和密码，为了安全，你所输入的密码是不显示的，在输入完毕后直接点回车即可。</p>
+<p>等待一段时间（大概十分钟），在浏览器中输入username.github.io即可看到你生成的网页了。</p>
+<p>若对过程有疑问，可参考<a href="https://help.github.com/categories/20/articles">官方帮助</a>。</p>
+<h2>高级属性的设置</h2>
+<p>在pelican中，可以通过修改pelicanconf.py的参数来设置一些你想要的东西。也可以下载一些模板来更换网页的样式。</p>
+<h3>主题的更换</h3>
+<p>首先将主题下载到你的电脑并安装你想要的主题。（点击<a href="https://github.com/getpelican/pelican-themes">这里</a>可看到主题的列表，大部分主题都有截图可以预览）</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/getpelican/pelican-themes.git</span>
+<span class="n">cd</span> <span class="n">pelican</span><span class="o">-</span><span class="n">themes</span>
+<span class="n">pelican</span><span class="o">-</span><span class="n">themes</span> <span class="o">-</span><span class="n">i</span> <span class="n">yourtheme</span>   <span class="c1">//yourtheme是你想安装的主题的名字</span>
+</pre></div>
+
+
+<p>安装好主题后就可以通过修改pelicanconf.py来应用主题了，在pelicanconf.py中添加</p>
+<div class="highlight"><pre><span class="n">THEME</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">yourtheme</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<h3>添加评论系统</h3>
+<p>评论系统是通过<a href="https://disqus.com/">Disqus</a>完成的，你可以在Disqus上申请一个账号，并记住账号的shortname，在pelicanconf.py中添加</p>
+<div class="highlight"><pre><span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">shortname</span><span class="err">&#39;</span>   <span class="c1">//shortname换成你自己的shortname</span>
+</pre></div>
+
+
+<h3>添加Google Analytics</h3>
+<p>Google Analytics可以记录你的网站受众类型，网站的流量等，功能及其强大。请在<a href="http://www.google.com/analytics/">Google Analytics</a>中申请一个账号。然后记录你申请的跟踪ID，在pelicanconf.py中添加</p>
+<div class="highlight"><pre><span class="n">GOOGLE_ANALYTICS</span> <span class="o">=</span> <span class="err">&#39;跟踪</span><span class="n">ID</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<h3>使用Google Webmasters</h3>
+<p>在<a href="https://www.google.com/webmasters/">Google Webmasters</a>上注册账号即可。</p>
+<h3>添加sitemap插件</h3>
+<p>首先下载所需要的插件</p>
+<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">:</span><span class="c1">//github.com/getpelican/pelican-plugins.git</span>
+</pre></div>
+
+
+<p>在pelicanconf中添加</p>
+<div class="highlight"><pre><span class="n">PLUGIN_PATH</span> <span class="o">=</span> <span class="n">u</span><span class="s">&quot;pelican-plugins&quot;</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;sitemap&quot;</span><span class="p">]</span>
+<span class="n">SITEMAP</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;format&quot;</span><span class="o">:</span> <span class="s">&quot;xml&quot;</span><span class="p">,</span>
+    <span class="s">&quot;priorities&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s">&quot;articles&quot;</span><span class="o">:</span> <span class="mf">0.7</span><span class="p">,</span>
+        <span class="s">&quot;indexes&quot;</span><span class="o">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s">&quot;pages&quot;</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s">&quot;changefreqs&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s">&quot;articles&quot;</span><span class="o">:</span> <span class="s">&quot;monthly&quot;</span><span class="p">,</span>
+        <span class="s">&quot;indexes&quot;</span><span class="o">:</span> <span class="s">&quot;daily&quot;</span><span class="p">,</span>
+        <span class="s">&quot;pages&quot;</span><span class="o">:</span> <span class="s">&quot;monthly&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3>使用独立域名</h3>
+<ol>
+<li>首先购买一个域名，我是在<a href="https://www.godaddy.com/">Godaddy</a>上购买的，它是一个国外的出售域名的网站，不需要审核，价格也还可以。</li>
+<li>修改Nameservers为这两个地址：f1g1ns1.dnspod.net、f1g1ns2.dnspod.net。</li>
+<li>在Dnspod上添加新域名，并申请一条A记录指向Github Pages的ip:207.97.227.245</li>
+<li>在Pelican主目录上传CNAME文件，添上刚刚申请的域名，如我的www.dangqi.me。（CNAME文件的文件名为CNAME，没有后缀，其内容为www.dangqi.me）</li>
+</ol>
+<h2>更多详细内容</h2>
+<p>pelican的官方文档：<a href="http://docs.getpelican.com/en/3.4.0/">http://docs.getpelican.com/en/3.4.0/</a></p>
+<p>我的代码:<a href="https://github.com/numb1313/numb1313.github.io">https://github.com/numb1313/numb1313.github.io</a></p>
+<h2>遇到的问题</h2>
+<ol>
+<li>在对pelicanconf.py配置时出现关于utf-8码的问题。我在<a href="http://utf8.supfree.net/">http://utf8.supfree.net/</a>上直接把汉字转换成utf-8编码，然后粘贴到文档里就可以了。</li>
+<li>关于本地预览与上传时pelicanconf中SITEURL的配置应该设置成不同的值，本地预览时可以设置为.，在上传后可以设置为username.github.io或者你自己申请的独立域名</li>
+<li>在上传后，可能会需要一些时间来更新你的代码等，如果出现404错误，可以等待一阵再试，若还不行，可以自行google。</li>
+</ol>
             </div>
             <!-- /.entry-content -->
     <hr/>
