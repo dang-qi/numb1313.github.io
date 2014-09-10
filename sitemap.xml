@@ -5,30 +5,37 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://www.dangqi.me/index.html</loc>
-<lastmod>2014-09-08T11:12:16-00:00</lastmod>
+<lastmod>2014-09-10T20:24:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.dangqi.me/archives.html</loc>
-<lastmod>2014-09-08T11:12:16-00:00</lastmod>
+<lastmod>2014-09-10T20:24:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.dangqi.me/tags.html</loc>
-<lastmod>2014-09-08T11:12:16-00:00</lastmod>
+<lastmod>2014-09-10T20:24:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://www.dangqi.me/categories.html</loc>
-<lastmod>2014-09-08T11:12:16-00:00</lastmod>
+<lastmod>2014-09-10T20:24:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://www.dangqi.me/pages/about.html</loc>
+<lastmod>2014-09-10T00:00:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.3</priority>
 </url>
 
 <url>
@@ -39,7 +46,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://www.dangqi.me/category/review.html</loc>
+<loc>http://www.dangqi.me/category/tech.html</loc>
 <lastmod>2014-09-08T00:00:00:%s</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
